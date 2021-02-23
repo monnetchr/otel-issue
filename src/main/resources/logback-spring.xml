@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <configuration>
-
-    <springProperty scope="context" name="ENV" source="SYSTEM_ENV"/>
-    <springProperty scope="context" name="HOST" source="SERVICE_HOST"/>
-    <springProperty scope="context" name="INSTANCE" source="SERVICE_INSTANCE"/>
-
     <appender name="consoleAppender" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
             <pattern>%d{"yyyy-MM-dd HH:mm:ss.SSS"} %highlight(%-5level) [%thread] %magenta(%logger{1}).%boldMagenta(%M) %msg traceId=%X{traceId} spanId=%X{spanId} %n</pattern>
