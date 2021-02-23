@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+
+    <springProperty scope="context" name="ENV" source="SYSTEM_ENV"/>
+    <springProperty scope="context" name="HOST" source="SERVICE_HOST"/>
+    <springProperty scope="context" name="INSTANCE" source="SERVICE_INSTANCE"/>
+
+    <appender name="consoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{"yyyy-MM-dd HH:mm:ss.SSS"} %highlight(%-5level) [%thread] %magenta(%logger{1}).%boldMagenta(%M) %msg traceId=%X{traceId} spanId=%X{spanId} %n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="org.springframework" level="WARN"/>
+    <logger name="org.springframework.web" level="WARN"/>
+<!--    <logger name="org.springframework.web.client" level="DEBUG"/>-->
+<!--    <logger name="org.springframework.cloud.sleuth" level="TRACE"/>-->
+<!--    <logger name="io.opentelemetry" level="TRACE"/>-->
+<!--    <logger name="org.apache.http" level="TRACE"/>-->
+
+    <logger name="com.example" level="DEBUG"/>
+
+    <root level="INFO">
+        <appender-ref ref="consoleAppender"/>
+    </root>
+
+</configuration>
